@@ -20,7 +20,7 @@ public class UserManageForm extends Form {
 
 	private static final long serialVersionUID = -4785626492763637890L;
 
-	// Injecting my implementation of PostgreSQL DAO
+	// Injecting implementation of PostgreSQL DAO
 	@SpringBean
 	private PostgresDAO postgresDAO;
 
