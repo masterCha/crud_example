@@ -11,9 +11,10 @@ public class UserManagePage extends WebPage {
 	private static final long serialVersionUID = -1491789645267539639L;
 
 	public UserManagePage(WebPage webPage, ModalWindow modalwindow, String purpose) {
-
+		// Setting the title of form according to purpose
 		add(new Label("title", purpose.substring(0, 1).toUpperCase() + purpose.substring(1)));
-
+		
+		// Creating form according to purpose
 		if (purpose.equals("edit"))
 			add(new UserManageForm("userManageForm", webPage, modalwindow, "edit"));
 		if (purpose.equals("add"))
