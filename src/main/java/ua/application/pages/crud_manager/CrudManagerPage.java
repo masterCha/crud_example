@@ -27,7 +27,7 @@ import ua.application.users.Users;
 public class CrudManagerPage extends WebPage {
 	private static final long serialVersionUID = 3L;
 
-	// Injecting my implementation of PostgreSQL DAO
+	// Injecting implementation of PostgreSQL DAO
 	@SpringBean
 	PostgresDAO postgresDAO;
 
@@ -137,7 +137,7 @@ public class CrudManagerPage extends WebPage {
 
 		add(new PagingNavigator("pagingNavigator", dataView));
 	}
-
+	// Creating page associated with modal window
 	public void addMsgDialog(String purpose) {
 		msgDialog.setPageCreator(new ModalWindow.PageCreator() {
 
