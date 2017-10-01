@@ -14,8 +14,9 @@ import ua.application.users.Users;
 public class UserSession extends WebSession {
 
 	private static final long serialVersionUID = 849969037186374393L;
-
+	// authenticated user
 	Users user;
+	// list of all users
 	List<Users> allUsers;
 	boolean signIn;
 
@@ -26,11 +27,11 @@ public class UserSession extends WebSession {
 		super(request);
 
 	}
-
+	// Getting current session
 	public static UserSession getInstance() {
 		return (UserSession) Session.get();
 	}
-
+	// Sign in
 	public boolean signIn(String login, String password) {
 		user = findUser(login);
 		if (user != null && (user.getPassword().trim().toUpperCase()).equals(password.toUpperCase())) {
@@ -39,14 +40,14 @@ public class UserSession extends WebSession {
 		}
 		return false;
 	}
-
+	// Sign out
 	public void signOut() {
 		signIn = false;
 		this.invalidate();
 
 	}
 
-	// Find user
+	// Find user by login from list of all users
 	public Users findUser(String login) {
 		for (Users user : allUsers) {
 			if ((user.getLogin().trim().toUpperCase()).equals(login.toUpperCase()))
