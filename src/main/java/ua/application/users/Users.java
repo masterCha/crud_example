@@ -25,7 +25,7 @@ public class Users implements Serializable {
 		this.age = age;
 	}
 
-	/* GETTERS AND SETTERS */
+	// Getters and setters
 	public int getId() {
 		return id;
 	}
