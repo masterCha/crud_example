@@ -27,7 +27,7 @@ public class SearchForm extends Form {
 
 	@Override
 	public final void onSubmit() {
-
+		// Transferring searched name to page using page parameters
 		PageParameters parameters = new PageParameters();
 		if (userName != null) {
 			parameters.add("searchResult", userName);
