@@ -15,7 +15,7 @@ import ua.application.pages.user_manage.UserManagePage;
 public class AuthenticationPage extends WebPage {
 	private static final long serialVersionUID = 1L;
 
-	// Injecting my implementation of PostgreSQL DAO
+	// Injecting implementation of PostgreSQL DAO
 	@SpringBean
 	PostgresDAO postgresDAO;
 
@@ -23,8 +23,9 @@ public class AuthenticationPage extends WebPage {
 
 	public AuthenticationPage(final PageParameters parameters) {
 		super(parameters);
-
+		
 		add(new LoginForm("loginForm"));
+		// Creating modal window for user regestration
 		add(msgDialog = new ModalWindow("msgDialog"));
 
 		msgDialog.setPageCreator(new ModalWindow.PageCreator() {
@@ -35,6 +36,8 @@ public class AuthenticationPage extends WebPage {
 				return new UserManagePage(AuthenticationPage.this, msgDialog, "registration");
 			}
 		});
+		
+		// Creating link for user regestration
 		add(new AjaxLink<Void>("newUserReg") {
 
 			private static final long serialVersionUID = -1035900408251123913L;
