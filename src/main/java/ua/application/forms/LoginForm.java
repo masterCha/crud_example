@@ -14,7 +14,7 @@ public class LoginForm extends Form {
 
 	private static final long serialVersionUID = -2777204122537772509L;
 
-	// Injecting my implementation of PostgreSQL DAO
+	// Injecting implementation of PostgreSQL DAO
 	@SpringBean
 	private PostgresDAO postgresDAO;
 
@@ -33,8 +33,9 @@ public class LoginForm extends Form {
 	}
 
 	public final void onSubmit() {
-
+		// Copy the list of all users to session for further authentication
 		UserSession.getInstance().setAllUsers(postgresDAO.getAllUsers());
+		// Sign in
 		if (UserSession.getInstance().signIn(login, password))
 			setResponsePage(CrudManagerPage.class);
 	}
