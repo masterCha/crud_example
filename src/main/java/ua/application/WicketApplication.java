@@ -29,9 +29,11 @@ public class WicketApplication extends WebApplication {
 	public void init() {
 
 		super.init();
-
+		
+		// Listener for Spring components
 		getComponentInstantiationListeners().add(new SpringComponentInjector(this));
-
+		
+		// Mounting pages
 		mountPage("/index", AuthenticationPage.class);
 		mountPage("/crud-manager", CrudManagerPage.class);
 	}
