@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+        <title wicket:id="title">add/edit</title> 
+        <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />       
+	</head> 
+
+	<body>
+		<form wicket:id="userManageForm" method="post" class="panel">
+		   	<table>
+		   		<tr>
+		   			<td>Login:</td>
+		   			<td><input type="text" wicket:id="login" required="required"></td>
+		   		</tr>
+		   		
+		   		<tr>
+		   			<td>Password:</td>
+		   			<td><input type="password" wicket:id="password"></td>
+		   		</tr>
+		   		
+		   		<tr>
+		   			<td>Full Name:</td>
+		   			<td><input type="text" wicket:id="name" required="required"></td>
+		   		</tr>
+		   		
+		   		<tr>
+		   			<td>Age:</td>
+		   			<td><input type="text" wicket:id="age" required="required"></td>
+		   		</tr>
+		   		<tr>
+			   		<td><input type="submit" wicket:id="submit" name="Ok"></td>
+			   		<td><button wicket:id="cancelSubmit">Cancel</button></td>
+			   	</tr>
+		   	</table>     
+				
+		</form>        
+
+			        
+	</body>
+</html>

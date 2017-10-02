@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>CRUD Manager</title>
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Stylesheet" />
+	</head>
+	<body>
+		<div id="userInfo">
+			<p wicket:id="currentUser">Welcome</p>
+			<a wicket:id="exit">Exit</a>
+		</div>		
+		
+		<fieldset>
+			<legend style="color: #F90">CRUD Manager</legend>		
+			<form wicket:id="searchForm" method="post">
+			
+				<div id="userSearch">
+					<input type="text" id="username" wicket:id="username"/>
+					<input type="submit" value="Search">
+				</div>
+			
+			</form>
+
+			<div id="addUser"><a wicket:id="addUser">+Add</a></div>
+
+			
+			
+			<table>
+				<tr>
+					<th>ID</th><th>Login</th><th>Password</th><th>Full Name</th><th>Age</th><th colspan="3">Action</th>
+				</tr>
+				<tr wicket:id="rows">
+					<td wicket:id="dataRow"></td>
+					
+					<td><a wicket:id="editLink">Edit</a></td>
+					<td>/</td>
+					<td><a wicket:id="deleteLink">Delete</a></td>
+										
+				</tr>			
+			</table>
+			<div wicket:id="pagingNavigator"></div>
+			<div wicket:id="msgDialog"></div>
+			
+		</fieldset>
+		
+	</body>
+</html>
